@@ -15,7 +15,7 @@ windows环境下，下载二进制文件安装，配置环境变量。
 # 检查环境
 ```
 >>> hugo version
-Hugo Static Site Generator v0.68.3-157669A0 linux/amd64 BuildDate: 2020-03-24T12:05:34Z
+Hugo Static Site Generator v0.68.3-157669A0 linux/amd64 BuildDate: 2020-06-07T12:05:34Z
 ```
 # 创建站点
 hugo 安装成功后，使用`hugo new site` 命令创建博客：
