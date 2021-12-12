@@ -1,3 +1,3 @@
 # ShiJiashuai's Blog
 
-基于Hugo的博客。
+a blog powered by Hugo.
