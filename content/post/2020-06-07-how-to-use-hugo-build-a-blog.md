@@ -3,9 +3,9 @@ title: Hugo使用记录
 date: '2020-06-07'
 slug: how-to-use-hugo
 categories:
-  - learn
+  - problems
 tags:
-  - use-record
+  - use
 ---
 
 # hugo安装
@@ -162,7 +162,8 @@ git push origin master
 ```
 
 # GitPages部署
-假设你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：xxx.github.io （xxx替换为你的github用户名）。
+假设你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：自己在github上面的用户名。
+然后，当你把自己的blog代码仓库推送到github上之后，github就会自动为你重新部署静态网站。稍等片刻访问http://usename.github.io/就可以看到自己创建的页面了。
 ```
 $ hugo --theme=hyde --baseUrl="http://xxx.github.io/"
 ```
