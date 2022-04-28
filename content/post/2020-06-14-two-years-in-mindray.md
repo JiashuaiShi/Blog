@@ -1,5 +1,5 @@
 ---
-title: 我在迈瑞工作的两年
+title: 在迈瑞两年工作的小结
 date: '2020-06-14'
 slug: two-years-in-mindray
 categories:
