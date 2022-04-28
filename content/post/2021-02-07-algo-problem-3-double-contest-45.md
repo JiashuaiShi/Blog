@@ -141,8 +141,6 @@ tags:
 **解题思路：**
 DP。题目给出若干区间，每个区间有权值，从中选出若干区间且不想相交，使得权值最大。
 
-持续更新。
-
 
 
   [1]: https://leetcode-cn.com/problems/sum-of-unique-elements/

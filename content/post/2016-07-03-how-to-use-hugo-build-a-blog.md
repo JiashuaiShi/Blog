@@ -1,6 +1,6 @@
 ---
 title: Hugo使用记录
-date: '2020-06-07'
+date: '2016-07-03'
 slug: how-to-use-hugo
 categories:
   - problems
