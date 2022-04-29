@@ -7,7 +7,9 @@ categories:
 tags:
   - go
 ---
+
 基于channel+select的方案，实现WorkPool的三个功能：
-- pool 的创建与销毁；
-- pool 中 worker（Goroutine）的管理；
-- task 的提交与调度；
+
+- pool 的创建与销毁
+- pool 中 worker（Goroutine）的管理
+- task 的提交与调度

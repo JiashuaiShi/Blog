@@ -1,5 +1,5 @@
 ---
-title: 几个代码优化的小例子
+title: Go代码优化的小例子
 date: '2022-04-10'
 slug: learn-go-optimize
 categories:
