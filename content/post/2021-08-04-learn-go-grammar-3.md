@@ -1,5 +1,5 @@
 ---
-title: Go语法篇-3-Goroutine的使用
+title: Go语法篇-3-channel的使用
 date: '2021-08-04'
 slug: learn-go-grammar-3
 categories:
@@ -8,7 +8,6 @@ tags:
   - go
 ---
 Go 语言实现了基于 CSP（Communicating Sequential Processes）理论的并发方案。channel 是用于 Goroutine 间通信。
-
 
 
 ## 无缓冲通道
