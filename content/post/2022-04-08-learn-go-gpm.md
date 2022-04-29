@@ -15,7 +15,7 @@ Go 语言基于 GMP 模型实现用户态线程。
 - P: 代表调度器，负责调度 goroutine，维护一个本地 goroutine 队列，M 从 P 上获得 goroutine 并执行，同时还负责部分内存的管理。
 - M: 代表着真正的执行计算资源。在绑定有效的 P 后，进入一个调度循环，而调度循环的机制大致是从 P 的本地运行队列以及全局队列中获取 G，切换到 G 的执行栈上并执行 G 的函数，调用 goexit 做清理工作并回到 M，如此反复。M 并不保留 G 状态，这是 G 可以跨M 调度的基础。
 
-<img src="C:\Users\shoum\AppData\Roaming\Typora\typora-user-images\image-20220429201818351.png" alt="image-20220429201818351" style="zoom:80%;" />
+<img src="https://s3.bmp.ovh/imgs/2022/04/29/d72977ed94ddf2f5.png" alt="image-20220429201818351" style="zoom:80%;" />
 
 在 Go 中，线程是运行 goroutine 的实体，调度器的功能是把可运行的 goroutine 分配到工作线程上。Goroutine 调度器和 OS 调度器是通过 M 结合起来的，每个 M 都代表了 1 个内核线程，OS 调度器负责把内核线程分配到 CPU 的核上执行。
 
@@ -28,7 +28,7 @@ Goroutine 们要竞争的“CPU”资源就是操作系统线程。这样，Goro
 - P 列表：所有的 P 都在程序启动时创建，并保存在数组中，最多有 GOMAXPROCS(可配置) 个。
   M：线程想运行任务就得获取 P，从 P 的本地队列获取 G，P 队列为空时，M 也会尝试从全局队列拿一批 G 放到 P 的本地队列，或从其他 P 的本地队列偷一半放到自己 P 的本地队列。M 运行 G，G 执行之后，M 会从 P 获取下一个 G，不断重复下去。
 
-<img src="C:\Users\shoum\Desktop\GPM.jpg" alt="GPM" style="zoom:80%;" />
+<img src="https://s3.bmp.ovh/imgs/2022/04/29/43642eab3f93e7d8.jpg" alt="GPM" style="zoom:80%;" />
 
 ## 调度器的行为
 

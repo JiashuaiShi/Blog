@@ -24,7 +24,7 @@ redis: redis 即 Remote Dictionary Server，用中文翻译过来可以理解为
 
 ## 1.3 redis 为什么这么快？
 
-![https://files.mdnice.com/user/16240/f1f32b9f-e135-4d13-a34d-a2205acf7713.png](https://files.mdnice.com/user/16240/f1f32b9f-e135-4d13-a34d-a2205acf7713.png)
+![f1f32b9f-e135-4d13-a34d-a2205acf7713](https://s3.bmp.ovh/imgs/2022/04/29/3ed093753becd7b6.png)
 
 redis 总共有八种数据结构，五种基本数据类型和三种特殊数据类型。
 
@@ -49,13 +49,13 @@ redis 总共有八种数据结构，五种基本数据类型和三种特殊数�
 
 redis 有两种持久化的方式，AOF 和 RDB。
 
-![https://files.mdnice.com/user/16240/966a33a4-4de9-418c-9f87-5f1bc3683463.png](https://files.mdnice.com/user/16240/966a33a4-4de9-418c-9f87-5f1bc3683463.png)
+![966a33a4-4de9-418c-9f87-5f1bc3683463](https://s3.bmp.ovh/imgs/2022/04/29/3c7d1f1b8ed6952c.png)
 
 ## AOF:
 
 AOF（append only file） 持久化，redis 每次执行一个命令时，都会把这个「命令原本的语句记录到一个. aod 的文件当中，然后通过 fsync 策略，将命令执行后的数据持久化到磁盘中」(不包括读命令)。
 
-![https://files.mdnice.com/user/16240/35a1772e-aa9c-40f7-978c-0a467462ce65.png](https://files.mdnice.com/user/16240/35a1772e-aa9c-40f7-978c-0a467462ce65.png)
+![35a1772e-aa9c-40f7-978c-0a467462ce65](https://s3.bmp.ovh/imgs/2022/04/29/622d2ce3c0a38816.png)
 
 ### AOF 的优点:
 
@@ -73,7 +73,7 @@ AOF（append only file） 持久化，redis 每次执行一个命令时，都会
 
 把某个时间点 redis 内存中的数据以二进制的形式存储的一个. rdb 为后缀的文件当中，也就是「周期性的备份 redis 中的整个数据」，这是 redis 默认的持久化方式，也就是我们说的快照 (snapshot)，是采用 fork 子进程的方式来写时同步的。
 
-![https://files.mdnice.com/user/16240/8a7ebb65-bf1c-4c23-9272-05e96db88506.png](https://files.mdnice.com/user/16240/8a7ebb65-bf1c-4c23-9272-05e96db88506.png)
+![8a7ebb65-bf1c-4c23-9272-05e96db88506](https://s3.bmp.ovh/imgs/2022/04/29/d4863e1748500202.png)
 
 ### RDB 的优点:
 
@@ -87,7 +87,7 @@ AOF（append only file） 持久化，redis 每次执行一个命令时，都会
 1. 「有可能会产生长时间的数据丢失」。
 2. 可能会有长时间停顿: 我们前面讲了，fork 子进程这个过程是和 redis 的数据量有很大关系的，如果「数据量很大，那么很有可能会使 redis 暂停几秒」。
 
-![https://files.mdnice.com/user/16240/264771c3-4da5-41e9-a072-fff0c0dcfc85.png](https://files.mdnice.com/user/16240/264771c3-4da5-41e9-a072-fff0c0dcfc85.png)
+![264771c3-4da5-41e9-a072-fff0c0dcfc85](https://s3.bmp.ovh/imgs/2022/04/29/5009855bd7933483.png)
 
 - 定时过期：每个设置过期时间的 key 都需要创建一个定时器，到过期时间就会立即清除。该策略可以立即清除过期的数据，对内存很友好；但是会占用大量的 CPU 资源去处理过期的数据，从而影响缓存的响应时间和吞吐量。
 - 惰性过期：只有当访问一个 key 时，才会判断该 key 是否已过期，过期则清除。该策略可以最大化地节省 CPU 资源，却对内存非常不友好。极端情况可能出现大量的过期 key 没有再次被访问，从而不会被清除，占用大量内存。
@@ -106,7 +106,7 @@ AOF（append only file） 持久化，redis 每次执行一个命令时，都会
 
 热 key 就是说，在某一时刻，有非常多的请求访问某个 key，流量过大，导致该 redis 服务器宕机。
 
-![https://files.mdnice.com/user/16240/37361019-ce03-4a05-9f83-6e7f61d7f4a4.png](https://files.mdnice.com/user/16240/37361019-ce03-4a05-9f83-6e7f61d7f4a4.png)
+![37361019-ce03-4a05-9f83-6e7f61d7f4a4](https://s3.bmp.ovh/imgs/2022/04/29/4de4b0b7677f2b53.png)
 
 ## 解决方案:
 
@@ -184,13 +184,13 @@ edis 集群是一种分布式数据库方案，集群通过分片（sharding）�
 
 它是去中心化的，如图所示，该集群由三个 Redis 节点组成，每个节点负责整个集群的一部分数据，每个节点负责的数据多少可能不一样。
 
-![https://files.mdnice.com/user/16240/9b22578f-441b-470c-b2ae-d5f71e530b91.png](https://files.mdnice.com/user/16240/9b22578f-441b-470c-b2ae-d5f71e530b91.png)
+![9b22578f-441b-470c-b2ae-d5f71e530b91](nullhttps://s3.bmp.ovh/imgs/2022/04/29/42bc0a3c9c342211.png)
 
 判断故障的逻辑其实与哨兵模式有点类似，在集群中，每个节点都会定期的向其他节点发送 ping 命令，通过有没有收到回复来判断其他节点是否已经下线。
 
 如果长时间没有回复，那么发起 ping 命令的节点就会认为目标节点疑似下线，也可以和哨兵一样称作主观下线，当然也需要集群中一定数量的节点都认为该节点下线才可以，我们来说说具体过程：
 
-![https://files.mdnice.com/user/16240/540a8938-cd81-4adc-acf7-924c7ec2bd33.png](https://files.mdnice.com/user/16240/540a8938-cd81-4adc-acf7-924c7ec2bd33.png)
+![540a8938-cd81-4adc-acf7-924c7ec2bd33](https://s3.bmp.ovh/imgs/2022/04/29/ad5ddfff7af5a07f.png)
 
 1. 当 A 节点发现目标节点疑似下线，就会向集群中的其他节点散播消息，其他节点就会向目标节点发送命令，判断目标节点是否下线
 2. 如果集群中半数以上的节点都认为目标节点下线，就会对目标节点标记为下线，从而告诉其他节点，让目标节点在整个集群中都下线
@@ -213,7 +213,7 @@ redis 为单进程单线程模式，采用队列模式将并发访问变成串�
 
 返回值：设置成功，返回 1 。设置失败，返回 0 。
 
-![https://files.mdnice.com/user/16240/e5ed834f-76c6-417c-8682-d74ce1ac58c4.png](https://files.mdnice.com/user/16240/e5ed834f-76c6-417c-8682-d74ce1ac58c4.png)
+![e5ed834f-76c6-417c-8682-d74ce1ac58c4](https://s3.bmp.ovh/imgs/2022/04/29/3785da026855f770.png)
 
 使用 SETNX 完成同步锁的流程及事项如下：
 
@@ -221,7 +221,7 @@ redis 为单进程单线程模式，采用队列模式将并发访问变成串�
 2. 为了防止获取锁后程序出现异常，导致其他线程 / 进程调用 SETNX 命令总是返回 0 而进入死锁状态，需要为该 key 设置一个 “合理” 的过期时间；
 3. 释放锁，使用 DEL 命令将锁数据删除；
 
-![https://files.mdnice.com/user/16240/8f93d8bb-d9d3-4e78-bce9-1aea94332ef3.png](https://files.mdnice.com/user/16240/8f93d8bb-d9d3-4e78-bce9-1aea94332ef3.png)
+![8f93d8bb-d9d3-4e78-bce9-1aea94332ef3](https://s3.bmp.ovh/imgs/2022/04/29/e0909097b69875dd.png)
 
 - 跳跃表是有序集合 zset 的底层实现之一。
 - 跳跃表支持平均 O（logN），最坏 O（N）复杂度的节点查找，还可以通过顺序性操作批量处理节点。
