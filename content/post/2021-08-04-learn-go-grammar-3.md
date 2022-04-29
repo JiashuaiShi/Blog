@@ -7,7 +7,7 @@ categories:
 tags:
   - go
 ---
-Go 语言实现了基于 CSP（Communicating Sequential Processes）理论的并发方案。channel 是用于 Goroutine 间通信。
+Go 语言实现了基于 CSP（Communicating Sequential Processes）理论的并发方案。channel 是用于 Goroutine 间通信。对无缓冲 channel 类型的发送与接收操作，一定要放在两个不同的 Goroutine 中进行，否则会导致 deadlock。channel 的一个使用惯例，那就是发送端负责关闭 channel。
 
 
 ## 无缓冲通道
