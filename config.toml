@@ -35,7 +35,7 @@ hasCJKLanguage = true
 
 [params]
     description = "A website built through Hugo and blogdown."
-    footer = "&copy; [Github](https://github.com/jiashuaishi) 2016-2022 | [Leetcode](https://leetcode-cn.com/u/shijiashuai/)"
+    footer = "&copy;远跋 2016-2022 | [Leetcode](https://leetcode-cn.com/u/shijiashuai/) | [Github](https://github.com/jiashuaishi) "
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"

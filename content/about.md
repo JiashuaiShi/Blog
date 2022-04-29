@@ -8,9 +8,8 @@ author:
 - 2021-2022，即构科技，后台开发；
 - 熟悉Go、C/C++， 用过 JavaScript、Java、Lua、Shell。
 - 技术框架：Gin、Beego、Go Mirco、MySQL、Redis、Elasticsearch、Vue、Echarts。
-- 你可以在这里找到我：[Leetcode][1] | [Github][4] 
+- 你可以在这里找到我：[Leetcode][1] | [Github][2] 
 - 通过邮箱联系我：jiashuai.mail@gmail.com
 
 [1]:https://leetcode-cn.com/u/shijiashuai/
-[2]:https://shijiashuai.netlify.app/
-[3]:https://github.com/jiashuaishi
+[2]:https://github.com/jiashuaishi
